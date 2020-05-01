@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control de Bienes</title>
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'home' %}">Home</a> </p>
+        <p>{{ request.user.nombre }}</p>
+    {% else %}
+        <p>HOLA</p>
+    {% endif %}
+</head>
+
+<body>
+{% block content %}
+
+{% endblock content %}
+</body>
+
+</html>

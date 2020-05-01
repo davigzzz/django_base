@@ -1,0 +1,63 @@
+{% comment %}
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+     
+    </head>
+    <title>SCG</title>
+<body>
+<div class="content d-block">
+    <img class="alas-login" src="" alt="Escudo">
+    <div id="logo" class="text-center">
+        <img src="" alt="Logo presidencia">
+    </div>
+    <div class="card" data-form="sign-in">
+        <div class="card-header">Bienvenido al sistema de control de gestión</div>
+        <div class="card-body">
+            <form id="login-form" class="smart-form form-validate" autocomplete="off" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group" >
+                    <div class="floating-label">
+                        <input class="floating-input" type="text" placeholder=" " required name="usuario"value="">
+                        <span class="highlight"></span>
+                        <label>Usuario</label>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="floating-label">
+                        <input class="floating-input" type="password" placeholder=" " required name="password">
+                        <span class="highlight"></span>
+                        <label>Contraseña</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-signin text-uppercase" type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+{% endcomment %}
+
+<div class="container">
+    <h2>Login Form</h2>
+    <form method="POST" id="add_form" action="{% url 'login' %}">{% csrf_token %}
+      <div class="form-group">
+        <label >User Name</label>
+        <div class="input"><input type="text" name="usuario" required="required"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group">
+        <label >Password</label>
+        <div class="input"><input type="password" name="password" required="required"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group">
+      <label></label>
+        <div class="submit">
+          <button type="submit" class="btn-primary">Login</button>
+        </div>
+        <div class="clear"></div> </div>
+</form>
+  </div>
